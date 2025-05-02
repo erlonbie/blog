@@ -1,0 +1,40 @@
+stages:
+  - pre
+  - test
+  - deploy
+
+.task:
+  stage: test
+  image: nixos/nix
+  tags: []
+  only:
+    - merge_request
+  before_script:
+    - echo "experimental-features = nix-command flakes" >>/etc/nix/nix.conf
+    - nix develop
+
+# install:deps:
+#   stage: pre
+#   extends: .nix
+#   only:
+#     - merge_request
+#   script:
+#     - nix develop
+
+check:og:
+  extends:
+    - .task
+  script:
+    - nix develop -c task generate:og
+    - git diff --exit-code
+
+deploy_site:
+  stage: deploy
+  image: curlimages/curl
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - curl -X POST -d '{}' $CLOUDFLARE_DEPLOY_HOOK
+  only:
+    - schedules
+
