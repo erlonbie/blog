@@ -1,6 +1,6 @@
 ---
 title: "About"
-canonicalURL: https://erlonbie.github.io/mypage/about/
+canonicalURL: https://erlonbie.github.io/about/
 layout: "single"
 summary: archives
 ---
