@@ -1,4 +1,0 @@
-connexion
-pytest-flask
-pytest-mock
-requests
