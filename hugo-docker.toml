@@ -1,0 +1,183 @@
+baseURL = "/"
+title = "Erlon Bié"
+[pagination]
+  pagerSize = 15
+# paginate = 25
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+enableEmoji = true
+ignorefiles = ["content/slides"]
+
+[markup.highlight]
+noclasses = false
+
+[module]
+
+# Desabilitando minify que está causando problemas
+# [minify]
+# disableXML = true
+# minifyOutput = true
+
+[params]
+env = "production"
+title = "Erlon Bié"
+description = "Erlon Bie's blog"
+keywords = ["Blog", "Portfolio", "PaperMod"]
+author = "Me"
+images = ["cover.png"]
+DateFormat = "2006-01-02"
+defaultTheme = "auto"
+ShowReadingTime = true
+ShowPageViews = true
+ShowLikes = false
+ShowShareButtons = false
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowWordCount = true
+ShowRssButtonInSectionTermList = true
+UseHugoToc = true
+disableSpecial1stPost = false
+disableScrollToTop = false
+comments = false
+hidemeta = false
+hideSummary = true
+showtoc = true
+tocopen = false
+SeriesOpen = false
+goatcounter = "haseebmajid"
+[params.assets]
+favicon = "/favicon.ico"
+favicon16x16 = "/favicon-16x16.png"
+favicon32x32 = "/favicon-32x32.png"
+apple_touch_icon = "/apple-touch-icon.png"
+safari_pinned_tab = "/safari-pinned-tab.svg"
+disableHLJS = true
+[params.label]
+text = "Erlon Bié"
+icon = "/apple-touch-icon.png"
+iconHeight = 35
+[params.profileMode]
+enabled = true
+title = "Erlon Bié"
+subtitle = "Software Developer 💻 and Neovim & Rust enthusiast 🦀"
+# imageUrl = "https://www.gravatar.com/avatar/7ddefc94d562a0b5896ef7f1b7c69e0e?s=250"
+imageUrl = "https://media.licdn.com/dms/image/v2/D4D03AQHRohKwQRLeuw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1672838254061?e=1751500800&v=beta&t=u146MpFCQaDpT2Af8BsEY5ezJNxPK84CzgYr14gviOQ"
+imageWidth = 250
+imageHeight = 250
+imageTitle = "A photo of me on the Se Station in Sao Paulo, Brazil"
+
+[[params.profileMode.buttons]]
+name = "Posts"
+url = "/posts/"
+
+[[params.profileMode.buttons]]
+name = "Series"
+url = "/series/"
+
+[[params.profileMode.buttons]]
+name = "Tags"
+url = "/tags/"
+[params.homeInfoParams]
+Title = "Hi there 👋"
+Content = "Welcome to my blog"
+
+[[params.socialIcons]]
+name = "gitlab"
+url = "https://gitlab.com/erlonbie"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/erlonbie"
+
+[[params.socialIcons]]
+name = "mastodon"
+url = "https://mastodon.social/@erlonbie"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/erlon-bi%C3%A9-096675104/"
+
+[[params.socialIcons]]
+name = "youtube"
+url = "https://www.youtube.com/@erlonpb"
+
+[params.cover]
+hidden = true
+hiddenInList = true
+hiddenInSingle = true
+[params.editPost]
+URL = "https://gitlab.com/hmajid2301/blog/-/blob/main/content"
+appendFilePath = true
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 100
+threshold = 0.0
+minMatchCharLength = 0
+
+[[params.fuseOpts.keys]]
+name = "title"
+weight = 0.8
+
+[[params.fuseOpts.keys]]
+name = "section"
+weight = 0.2
+
+[[params.fuseOpts.keys]]
+name = "content"
+weight = 0.4
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[menu]
+
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 10
+
+# [[menu.main]]
+# identifier = "talks"
+# name = "Talks"
+# url = "/talks/"
+# weight = 20
+
+[[menu.main]]
+identifier = "About"
+name = "About"
+url = "/about/"
+weight = 30
+
+[[menu.main]]
+identifier = "Uses"
+name = "Uses"
+url = "/uses/"
+weight = 30
+
+# [[menu.main]]
+# identifier = "stats"
+# name = "Stats"
+# url = "https://stats.erlonbie.github.io/"
+# weight = 50
+# [menu.main.params]
+# external = true
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[markup.goldmark.renderer]
+unsafe = true
+
+
+[sitemap]
+changefreq = "monthly"
+filename = "sitemap.xml"
+priority = 0.5 

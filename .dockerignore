@@ -1,0 +1,16 @@
+.git
+.github
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+node_modules
+public
+resources
+.hugo_build.lock
+flake.nix
+flake.lock
+go.mod
+go.sum
+scripts/
+*.md 
