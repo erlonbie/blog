@@ -1,4 +1,4 @@
-baseURL = "https://erlonbie.github.io/mypage/"
+baseURL = "https://erlonbie.github.io/"
 title = "Erlon Bié"
 [pagination]
   pagerSize = 15
@@ -76,9 +76,9 @@ url = "posts"
 name = "Series"
 url = "series"
 
-[[params.profileMode.buttons]]
-name = "Archive"
-url = "archive"
+# [[params.profileMode.buttons]]
+# name = "Archive"
+# url = "archive"
 
 [[params.profileMode.buttons]]
 name = "Tags"
@@ -112,7 +112,7 @@ hidden = true
 hiddenInList = true
 hiddenInSingle = true
 [params.editPost]
-URL = "https://gitlab.com/hmajid2301/blog/-/blob/main/content"
+URL = "https://github.com/erlonbie/blog"
 appendFilePath = true
 [params.fuseOpts]
 isCaseSensitive = false
