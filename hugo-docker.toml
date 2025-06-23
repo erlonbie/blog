@@ -109,7 +109,7 @@ hidden = true
 hiddenInList = true
 hiddenInSingle = true
 [params.editPost]
-URL = "https://gitlab.com/hmajid2301/blog/-/blob/main/content"
+URL = "https://gitlab.com/erlonbie/blog/-/blob/main/content"
 appendFilePath = true
 [params.fuseOpts]
 isCaseSensitive = false

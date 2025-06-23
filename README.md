@@ -20,5 +20,5 @@ The theme is based of PaperModX with some of my own tweaks
 ## Appendix
 
 - <a href="https://www.flaticon.com/free-icons/blog" title="blog icons">Blog icons created by Freepik - Flaticon</a>
-- [Custom PaperModX Fork](https://github.com/hmajid2301/hugo-PaperModX)
+- [Custom PaperModX Fork](https://github.com/reorx/hugo-PaperModX)
    - Note this is no longer used as I have merged the theme with my blog to make it easier to change
