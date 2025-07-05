@@ -64,10 +64,10 @@ enabled = true
 title = "Erlon Bié"
 subtitle = "Software Developer 💻 and Neovim & Rust enthusiast 🦀"
 # imageUrl = "https://www.gravatar.com/avatar/7ddefc94d562a0b5896ef7f1b7c69e0e?s=250"
-imageUrl = "https://media.licdn.com/dms/image/v2/D4D03AQHRohKwQRLeuw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1672838254061?e=1751500800&v=beta&t=u146MpFCQaDpT2Af8BsEY5ezJNxPK84CzgYr14gviOQ"
+imageUrl = "/eu_luz.jpeg"
 imageWidth = 250
 imageHeight = 250
-imageTitle = "A photo of me on the Se Station in Sao Paulo, Brazil"
+imageTitle = "A photo of me on the Luz Station in Sao Paulo, Brazil"
 
 [[params.profileMode.buttons]]
 name = "Posts"
