@@ -15,10 +15,22 @@
     {{- end }} type-{{ .Type }} kind-{{ .Kind }} layout-{{ .Layout -}}
 " id="top">
     {{- partialCached "header.html" . .Page -}}
+    
+    {{- if (and (eq .Kind "page") (.Param "ShowToc")) -}}
+    <div class="page-layout">
+        <aside class="sidebar">
+            {{- partial "sidebar-toc.html" . -}}
+        </aside>
+        <main class="main {{- if (eq .Kind `page`) -}}{{- print " post" -}}{{- end -}} main-with-sidebar">
+            {{- block "main" . }}{{ end }}
+        </main>
+    </div>
+    {{- else -}}
     <main class="main {{- if (eq .Kind `page`) -}}{{- print " post" -}}{{- end -}}">
         {{- block "main" . }}{{ end }}
-
     </main>
+    {{- end -}}
+
     {{- if .Site.Params.goatcounter }}
     {{ partial "analytics.html" . -}}
     {{- end }}

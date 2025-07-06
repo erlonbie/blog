@@ -92,8 +92,7 @@
   box-shadow: 0 -1px 0 var(--primary) inset;
 }
 .post-content a:hover code {
-  box-shadow:
-    0 -1px 0 var(--link-hover-underline-color) inset,
+  box-shadow: 0 -1px 0 var(--link-hover-underline-color) inset,
     0 1px 0 var(--link-hover-underline-color);
 }
 
@@ -651,4 +650,122 @@ h1 > a > svg {
 img.in-text {
   display: inline;
   margin: auto;
+}
+
+/* Sidebar TOC Layout */
+.page-layout {
+  display: flex;
+  gap: var(--gap);
+  max-width: calc(var(--main-width) + 300px + var(--gap) * 3);
+  margin: auto;
+  padding: var(--content-gap) var(--gap) 0;
+}
+
+.sidebar {
+  position: sticky;
+  top: calc(var(--header-height) + 20px);
+  width: 280px;
+  height: fit-content;
+  flex-shrink: 0;
+}
+
+.main-with-sidebar {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-toc {
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  font-size: 0.9em;
+  max-height: calc(100vh - var(--header-height) - 40px);
+  overflow-y: auto;
+}
+
+.toc-header {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.toc-title {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.1em;
+}
+
+.toc-content {
+  font-size: 0.9em;
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-list ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.toc-list li {
+  margin: 0.3rem 0;
+}
+
+.toc-link {
+  display: block;
+  padding: 0.3rem 0.5rem;
+  color: var(--secondary);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+.toc-link:hover {
+  color: var(--link-hover-color);
+  background-color: var(--link-background-color);
+}
+
+.toc-link.active {
+  color: var(--link-hover-color);
+  background-color: var(--link-background-color);
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1200px) {
+  .page-layout {
+    flex-direction: column;
+    max-width: calc(var(--main-width) + var(--gap) * 2);
+  }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    order: -1;
+  }
+
+  .sidebar-toc {
+    max-height: none;
+  }
+
+  .main-with-sidebar {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-layout {
+    padding: var(--content-gap) var(--gap) 0;
+  }
+
+  .sidebar-toc {
+    font-size: 0.85em;
+    padding: 0.8rem;
+  }
 }
