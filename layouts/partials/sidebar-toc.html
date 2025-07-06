@@ -6,9 +6,6 @@
         <span class="toc-title">{{- i18n "toc" | default "Table of Contents" }}</span>
     </div>
     <div class="toc-content">
-        {{- if (.Param "UseHugoToc") }}
-        {{- .TableOfContents -}}
-        {{- else }}
         {{- $largest := 6 -}}
         {{- range $headers -}}
         {{- $headerLevel := index (findRE "[1-6]" . 1) 0 -}}
@@ -88,7 +85,6 @@
         {{- end -}}
         {{- end }}
         </ul>
-        {{- end }}
     </div>
 </div>
 
