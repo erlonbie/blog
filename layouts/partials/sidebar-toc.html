@@ -93,57 +93,113 @@
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const tocLinks = document.querySelectorAll('.sidebar-toc .toc-link');
-    const headings = document.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
+(function() {
+    'use strict';
     
-    // Function to update active TOC item
-    function updateActiveTOCItem() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        let currentHeading = null;
+    function initTOC() {
+        // Look for TOC links in the sidebar
+        const tocLinks = document.querySelectorAll('.sidebar-toc a[href^="#"]');
+        const headings = document.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
         
-        // Find the current heading based on scroll position
-        headings.forEach(heading => {
-            const rect = heading.getBoundingClientRect();
-            if (rect.top <= 100) { // 100px offset from top
-                currentHeading = heading;
+        console.log('TOC Links found:', tocLinks.length);
+        console.log('Headings found:', headings.length);
+        
+        if (tocLinks.length === 0 || headings.length === 0) {
+            console.log('No TOC links or headings found');
+            return;
+        }
+        
+        // Log all headings for debugging
+        headings.forEach((heading, index) => {
+            console.log(`Heading ${index}:`, heading.id, heading.textContent.trim());
+        });
+        
+        // Log all TOC links for debugging
+        tocLinks.forEach((link, index) => {
+            const href = link.getAttribute('href');
+            const headingId = href ? href.substring(1) : '';
+            console.log(`TOC Link ${index}:`, headingId, link.textContent.trim());
+        });
+        
+        function updateActiveTOCItem() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            let currentHeading = null;
+            
+            // Simple logic: find the last heading that's above the viewport
+            for (let i = headings.length - 1; i >= 0; i--) {
+                const heading = headings[i];
+                const rect = heading.getBoundingClientRect();
+                
+                if (rect.top <= 150) {
+                    currentHeading = heading;
+                    break;
+                }
             }
-        });
-        
-        // Remove active class from all TOC links
-        tocLinks.forEach(link => {
-            link.classList.remove('active');
-        });
-        
-        // Add active class to current heading's TOC link
-        if (currentHeading) {
-            const activeLink = document.querySelector(`.sidebar-toc .toc-link[data-heading="${currentHeading.id}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
+            
+            // If no heading found, use the first one
+            if (!currentHeading && headings.length > 0) {
+                currentHeading = headings[0];
+            }
+            
+            // Remove active class from all TOC links
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Add active class to current heading's TOC link
+            if (currentHeading) {
+                const activeLink = document.querySelector(`.sidebar-toc a[href="#${currentHeading.id}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                    console.log('Active heading:', currentHeading.id, currentHeading.textContent.trim());
+                } else {
+                    console.log('No TOC link found for heading:', currentHeading.id);
+                }
             }
         }
+        
+        // Throttle function
+        function throttle(func, limit) {
+            let inThrottle;
+            return function() {
+                const args = arguments;
+                const context = this;
+                if (!inThrottle) {
+                    func.apply(context, args);
+                    inThrottle = true;
+                    setTimeout(() => inThrottle = false, limit);
+                }
+            }
+        }
+        
+        // Update on scroll with throttling
+        window.addEventListener('scroll', throttle(updateActiveTOCItem, 100));
+        
+        // Initial update after a short delay
+        setTimeout(updateActiveTOCItem, 200);
+        
+        // Smooth scroll for TOC links
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     }
     
-    // Update on scroll
-    window.addEventListener('scroll', updateActiveTOCItem);
-    
-    // Initial update
-    updateActiveTOCItem();
-    
-    // Smooth scroll for TOC links
-    tocLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-});
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTOC);
+    } else {
+        initTOC();
+    }
+})();
 </script>
 {{- end }} 

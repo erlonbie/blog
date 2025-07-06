@@ -9,6 +9,7 @@ tags:
     - neovim
     - hugo
     - homelab
+ShowToc: true
 ---
 
 ## What do I use?
