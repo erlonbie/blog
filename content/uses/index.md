@@ -8,6 +8,7 @@ tags:
     - docker
     - neovim
     - hugo
+    - homelab
 ---
 
 ## What do I use?
