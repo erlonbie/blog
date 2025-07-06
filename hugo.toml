@@ -8,7 +8,6 @@ buildDrafts = false
 buildFuture = false
 buildExpired = false
 enableEmoji = true
-ignorefiles = ["content/slides"]
 
 [markup.highlight]
 noclasses = false
