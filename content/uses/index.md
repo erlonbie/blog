@@ -1,72 +1,47 @@
 ---
 title: Uses
 summary: What I use!
-canonicalURL: "https://erlonbie.github.io/uses/"
+canonicalURL: "https://blog.biehomelab.xyz/uses"
 url: /uses/
 ---
 
 # What do I use?
 
-<!-- The following is a list of the tools that I use daily. This page -->
-<!-- was inspired by [Wes Bros](https://wesbos.com/uses). See more pages like this [here](https://uses.tech). -->
-<!-- You can read more about my own workflow [here](/series/setup-your-development-workflow/) -->
-<!---->
-<!-- ![Neofetch](images/neofetch.png) -->
-<!---->
-<!-- For more details about my [dotfiles click here](https://gitlab.com/hmajid2301/dotfiles). -->
+This page is a collection of the tools, software, and hardware that I use on a daily basis. It serves as a snapshot of my current setup and workflow, which may change over time as I discover new tools or update my preferences. This is an inspiration from the [Uses](https://uses.tech/) project, which showcases the tools and setups of various developers and tech enthusiasts.
 
-## 🐧 OS + Hardware
+# Hardware
 
-<!-- - I am currently using [NixOS](https://nixos.org/) with [Hyprland](https://hyprland.org/) -->
-<!-- - I use two 🖥️ 32" 4k monitors -->
-<!-- - I use a ⌨️ [ZSA Voyager](https://www.zsa.io/voyager) -->
-<!-- - I use a 🖱️ [Logitech G502 X](https://www.logitechg.com/en-gb/products/gaming-mice/g502-x-wireless-lightforce.910-006190.html) -->
-<!-- - I have moved back to using a custom-built PC after using my laptop for a few months -->
-<!--   - Just ended up being less hassle, I didn't really need the portability of the laptop much. -->
+## Main Development Machine
 
-## Theme
+-   **Dell XPS i7 9300**: i7-1065G7, 16GB RAM, 1TB SSD, 4K touchscreen display
 
-<!-- - I use the 🐱 [catppuccin theme](https://github.com/catppuccin) for EVERYTHING. -->
-<!-- - I use the font 🖼️ [Monolisa](https://monolisa.dev/) -->
+I run a hackintosh on this laptop, it is my main machine for development and daily tasks.
 
-## 📑 Editor
+![Neofetch](images/fastfetch.png)
 
-<!-- - I use [Neovim](https://github.com/hmajid2301/dotfiles/home-manager/editors/neovim) using [NixVim](https://github.com/nix-community/nixvim) -->
+## Desktop & Gaming Setup
 
-## ✔️ Terminal
+-   **Desktop PC**: AMD Ryzen 5 5500, 32GB RAM, 2x512 NVMe SSD, AMD RX 5500 XT
+-   **Monitor**: [ASUS TUF Gaming VG279Q1A](https://www.asus.com/br/displays-desktops/monitors/tuf-gaming/tuf-gaming-vg279q1a/) - 27" Full HD IPS, 165Hz, 1ms MPRT, FreeSync Premium
+-   **Mouse**: Logitech Pebble 2 M350s
+-   **Headset**: HV-H2002D
 
-<!-- - I use the [foot terminal](https://github.com/DanteAlighierin/foot) with [Starship prompt](https://starship.rs/) -->
-<!-- - I use [fish 🐟 shell](https://fishshell.com/) as my shell -->
-<!-- - I also use Zellij as my multiplexing tool. -->
+I run a Proxmox server on this machine, which hosts my homelab. It is also used for gaming on Windows (on the other SSD).
 
-## ⚙️ Tools
+## Keyboards
 
-### Applications
+-   **Moergo Glove80**: Split ergonomic keyboard for comfortable typing
+-   **Planck 40%**: Compact mechanical keyboard for portable use
 
-<!-- - I use 🦊 [Firefox](https://www.mozilla.org/en-US/exp/firefox/new/) as my main browser -->
-<!-- - I use 🦆 [Mullvad](https://mullvad.net/) as my VPN -->
-<!-- - I use 🔒 [Bitwarden](https://bitwarden.com/) as my password manager -->
+## Mobile Devices
 
-### 🧰 CLI Tools
+-   **Smartphone**: Samsung Galaxy S22
+-   **Tablet**: Samsung Galaxy Tab S9+
+-   **Smartwatch**: Samsung Galaxy Watch 4 (44mm)
 
+## Homelab & Servers
 
-- [atuin](https://github.com/atuinsh/atuin/): To sync my shell history between multiple devices. Also makes sure it is backed up.
-- [exa](https://github.com/ogham/exa): ls replacement, used with [exa aliases](https://github.com/gazorby/fish-exa)
-- [fzf](https://github.com/junegunn/fzf): Really nice fuzzy search tool
-- [bat](https://github.com/sharkdp/bat): A better version of `cat`
+-   **NAS Server**: Dell Inspiron 5547 i7, 8GB RAM running TrueNAS Scale
+-   **Storage**: Dock station with SATA HDD/SSD adapter for NAS expansion
 
-<!-- According to `atuin` my most used commands: -->
-<!---->
-<!-- ```bash -->
-<!-- atuin stats -->
-<!-- [▮▮▮▮▮▮▮▮▮▮] 3622 nvim -->
-<!-- [▮▮▮▮▮▮▮▮▮ ] 3443 home-manager -->
-<!-- [▮▮▮▮▮▮▮   ] 2844 git add -->
-<!-- [▮▮▮▮▮▮    ] 2483 z -->
-<!-- [▮▮▮▮▮     ] 1910 bat -->
-<!-- [▮▮▮       ] 1405 git checkout -->
-<!-- [▮▮▮       ] 1402 eza -->
-<!-- [▮▮        ] 1041 nix-shell -->
-<!-- [▮▮        ]  944 git pull -->
-<!-- [▮▮        ]  938 task -->
-<!-- ``` -->
+This setup provides reliable storage and serves as the backbone of my homelab infrastructure.
